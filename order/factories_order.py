@@ -1,9 +1,11 @@
 import factory
 
 from django.contrib.auth.models import User
-from product.factories import ProductFactory
+from product.factories_product import ProductFactory
 
 from order.models import Order
+from product.models import Product
+
 
 class UserFactory(factory.django.DjangoModelFactory):
     email = factory.Faker('pystr')
@@ -25,3 +27,4 @@ class OrderFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Order
+        skip_postgeneration_save = True

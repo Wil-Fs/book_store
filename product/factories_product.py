@@ -13,7 +13,7 @@ class CategoryFactory(factory.django.DjangoModelFactory):
         model = Category
 
 class ProductFactory(factory.django.DjangoModelFactory):
-    price = factory.Faker('pyint')
+    price = factory.Faker('pyfloat')
     category = factory.LazyAttribute(CategoryFactory)
     title = factory.Faker('pystr')
 
@@ -28,3 +28,4 @@ class ProductFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Product
+        skip_postgeneration_save = True
