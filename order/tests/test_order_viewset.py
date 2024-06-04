@@ -10,6 +10,7 @@ from product.models import Product
 from order.models import Order
 
 class TestOrderViewSet(APITestCase):
+
     client = APIClient()
 
     def setUp(self):
@@ -29,7 +30,7 @@ class TestOrderViewSet(APITestCase):
         self.assertEqual(order_data['product'][0]['title'], self.product.title)
         self.assertEqual(order_data['product'][0]['price'], self.product.price)
         self.assertEqual(order_data['product'][0]['active'], self.product.active)
-        self.assertEqual(order_data['product'][0]['category'][0]['title'], self.category.title)
+        self.assertEqual(order_data['product'][0]['category'][0]['title'], self.product.category.title.all()[0].title)
 
     def test_create_order(self):
         user = UserFactory()
