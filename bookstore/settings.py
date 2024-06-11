@@ -149,3 +149,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = int(os.environ.get("DEBUG", default=0))
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+
+DEBUG_TOOLBAR_CONFIG = {
+    # ... suas outras configurações da debug toolbar ...
+    'IS_RUNNING_TESTS': False,
+}
