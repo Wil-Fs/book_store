@@ -55,6 +55,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "bookstore.urls"
@@ -74,6 +75,10 @@ TEMPLATES = [
         },
     },
 ]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 WSGI_APPLICATION = "bookstore.wsgi.application"
 
@@ -144,13 +149,13 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-SECRET_KEY = os.environ.get("SECRET_KEY", "3333")
+SECRET_KEY = os.environ.get("SECRET_KEY", "!ub8m91-4ada9+(fi27(z3dk4yd#mnighh&0^emw3(j65!#mf^")
 
 DEBUG = int(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://will-bookstore-878880eaef2d.herokuapp.com/']
 
 DEBUG_TOOLBAR_CONFIG = {
-    # ... suas outras configurações da debug toolbar ...
     "IS_RUNNING_TESTS": False,
 }
+
