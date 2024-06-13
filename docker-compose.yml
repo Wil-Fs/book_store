@@ -1,5 +1,5 @@
 services:
-  backend:
+  web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
@@ -23,9 +23,9 @@ services:
       - POSTGRES_PASSWORD=336
       - POSTGRES_DB=bookstore_db
     networks:
-      - backend
+      - web
 networks:
-  backend:
+  web:
     driver: bridge
 volumes:
   postgres_data:
