@@ -48,13 +48,15 @@ RUN apt-get update \
 
 # copy project requirement files here to ensure they will be cached.
 WORKDIR $PYSETUP_PATH
-COPY poetry.lock pyproject.toml ./
+#COPY poetry.lock pyproject.toml ./
+
+COPY requirements.txt ./
 
 # install runtime deps - uses $POETRY_VIRTUALENVS_IN_PROJECT internally
-RUN poetry install --no-dev
+#RUN poetry install --no-dev
 
 # quicker install as runtime deps are already installed
-RUN poetry install
+RUN pip install -r requirements.txt
 
 WORKDIR /app
 
