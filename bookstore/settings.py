@@ -155,7 +155,7 @@ INTERNAL_IPS = [
 
 SECRET_KEY = os.environ.get("SECRET_KEY", default="!ub8m91-4ada9+(fi27(z3dk4yd#mnighh&0^emw3(j65!#mf^")
 
-DEBUG = int(os.environ.get("DEBUG", default=False))
+DEBUG = os.environ.get("DEBUG", default=False)
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'will-bookstore-878880eaef2d.herokuapp.com']
 
