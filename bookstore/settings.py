@@ -26,9 +26,6 @@ SECRET_KEY = "django-insecure-dpvwz&#q)g7k0l-y0v*p^(pqf&2&d80$dty_aec5yk9@49%8s&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -157,7 +154,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", default="!ub8m91-4ada9+(fi27(z3dk4yd#m
 
 DEBUG = os.environ.get("DEBUG", default=False)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'will-bookstore-878880eaef2d.herokuapp.com']
+ALLOWED_HOSTS = ['*' ,'localhost', '127.0.0.1', 'https://web-production-34f53.up.railway.app']
 
 DEBUG_TOOLBAR_CONFIG = {
     "IS_RUNNING_TESTS": False,
